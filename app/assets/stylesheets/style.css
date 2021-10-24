@@ -1,0 +1,23 @@
+body {
+  background-color: grey;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1em;
+  border-radius: 0.5em;
+  text-align: center;
+}
+
+nav {
+  background-color: blue;
+  text-align: right;
+  padding: 2em;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+}

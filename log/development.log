@@ -1,0 +1,2689 @@
+  [1m[35m (319.6ms)[0m  [1m[35mCREATE DATABASE "dinnr_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (128.8ms)[0m  [1m[35mCREATE DATABASE "dinnr_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20211024001259)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" text, "last_name" text, "email" text, "location" text, "password_digest" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211024001259_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024001259"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-10-24 00:32:52.280574"], ["updated_at", "2021-10-24 00:32:52.280574"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateVenues (20211024004244)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "name" text, "location" text, "image" text, "type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211024004244_create_venues.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024004244"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFavourites (20211024010546)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "favourites" ("id" bigserial primary key, "name" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211024010546_create_favourites.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024010546"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFavouritesVenues (20211024011038)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "favourites_venues" ("favouite_id" integer, "venue_id" integer)[0m
+  ↳ db/migrate/20211024011038_create_favourites_venues.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024011038"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20211024014500)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211024014500_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024014500"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoriesVenues (20211024020103)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "categories_venues" ("category_id" integer, "venue_id" integer)[0m
+  ↳ db/migrate/20211024020103_create_categories_venues.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024020103"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lex@lex.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Lex"], ["last_name", "Poulsen"], ["email", "lex@lex.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$nuxqxQT8sCBNrAdMUTg.IOhiv4y7DUCFFEMwxm0YXnvwRH47FzfQO"], ["created_at", "2021-10-24 02:02:22.344664"], ["updated_at", "2021-10-24 02:02:22.344664"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "smithy@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["email", "smithy@ga.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$lE8KAIb8cMgMmpy4zfdIze/91cSnoIoXzVtfgvQVQA8zga3EpAIlG"], ["created_at", "2021-10-24 02:02:22.539429"], ["updated_at", "2021-10-24 02:02:22.539429"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joel@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Joel"], ["last_name", "Turnbull"], ["email", "joel@ga.com"], ["location", "Sydney, Australia"], ["password_digest", "$2a$12$/lkc2zBdrCbkV1Ut5eia.OVSBCrYG5Mh/ITCuavcy3TEGKiqzNdd."], ["created_at", "2021-10-24 02:02:22.732149"], ["updated_at", "2021-10-24 02:02:22.732149"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asmith@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alice"], ["last_name", "Smith"], ["email", "asmith@ga.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$Np5MtpJylMMwUsundPWY3ugDagIgJ0gGbJU8sdPgF7xOnboO02XyC"], ["created_at", "2021-10-24 02:02:22.926677"], ["updated_at", "2021-10-24 02:02:22.926677"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:6
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Builders Arms"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Create (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Builders Arms"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:02:22.944904"], ["updated_at", "2021-10-24 02:02:22.944904"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mVenue Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Bad Frankie"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bad Frankie"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:02:22.948795"], ["updated_at", "2021-10-24 02:02:22.948795"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Above Board"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Above Board"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:02:22.951853"], ["updated_at", "2021-10-24 02:02:22.951853"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Primo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Primo"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:02:22.954569"], ["updated_at", "2021-10-24 02:02:22.954569"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Catfish"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Catfish"], ["location", "Melbourne, Australia "], ["image", ""], ["created_at", "2021-10-24 02:02:22.957240"], ["updated_at", "2021-10-24 02:02:22.957240"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Baxter Inn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Baxter Inn"], ["location", "Sydney, Australia"], ["image", ""], ["created_at", "2021-10-24 02:02:22.960364"], ["updated_at", "2021-10-24 02:02:22.960364"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Continental Deli"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Continental Deli"], ["location", "Sydney, Australia"], ["image", ""], ["created_at", "2021-10-24 02:02:22.963198"], ["updated_at", "2021-10-24 02:02:22.963198"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Belle's Hot Chicken"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mVenue Create (0.1ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Belle's Hot Chicken"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:02:22.966021"], ["updated_at", "2021-10-24 02:02:22.966021"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Besk"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Besk"], ["location", "Perth, Australia"], ["image", ""], ["created_at", "2021-10-24 02:02:22.968620"], ["updated_at", "2021-10-24 02:02:22.968620"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "venues"[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bar"], ["created_at", "2021-10-24 02:02:22.977855"], ["updated_at", "2021-10-24 02:02:22.977855"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Restaurant"], ["created_at", "2021-10-24 02:02:22.980864"], ["updated_at", "2021-10-24 02:02:22.980864"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pub"], ["created_at", "2021-10-24 02:02:22.983511"], ["updated_at", "2021-10-24 02:02:22.983511"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cocktail Bar"], ["created_at", "2021-10-24 02:02:22.985808"], ["updated_at", "2021-10-24 02:02:22.985808"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dive Bar"], ["created_at", "2021-10-24 02:02:22.988088"], ["updated_at", "2021-10-24 02:02:22.988088"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ db/seeds.rb:26
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites"[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mFavourite Create (0.3ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lex Night Out"], ["created_at", "2021-10-24 02:02:23.002242"], ["updated_at", "2021-10-24 02:02:23.002242"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFavourite Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Quiet Wines"], ["created_at", "2021-10-24 02:02:23.004750"], ["updated_at", "2021-10-24 02:02:23.004750"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mFavourite Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Celebrate!"], ["created_at", "2021-10-24 02:02:23.006990"], ["updated_at", "2021-10-24 02:02:23.006990"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mFavourite Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cocktails"], ["created_at", "2021-10-24 02:02:23.009227"], ["updated_at", "2021-10-24 02:02:23.009227"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lex@lex.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Lex"], ["last_name", "Poulsen"], ["email", "lex@lex.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$s2n2p7R4OCrkYsl3DPhZI.QxTqowQQdQR0dIpToeu3NrznJoEGj/2"], ["created_at", "2021-10-24 02:03:06.249589"], ["updated_at", "2021-10-24 02:03:06.249589"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "smithy@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["email", "smithy@ga.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$u0prggycNJ3rB/8.WWvbquHUGrf.k33/uxO9CpEGycV/iMLYTA5oS"], ["created_at", "2021-10-24 02:03:06.446915"], ["updated_at", "2021-10-24 02:03:06.446915"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joel@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Joel"], ["last_name", "Turnbull"], ["email", "joel@ga.com"], ["location", "Sydney, Australia"], ["password_digest", "$2a$12$2/6KzGG9DpJn2spt9TSmGeNXVlmIoVQJxrkQByzMYLsWFXaVNfukW"], ["created_at", "2021-10-24 02:03:06.637191"], ["updated_at", "2021-10-24 02:03:06.637191"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asmith@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alice"], ["last_name", "Smith"], ["email", "asmith@ga.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$zyjECWZsXaWbciIoIz2TS.KyvVi7ya2Oa7pN1CBX4/hLFWOixAdCG"], ["created_at", "2021-10-24 02:03:06.827689"], ["updated_at", "2021-10-24 02:03:06.827689"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:6
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.6ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.3ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.1ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.1ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 7]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.1ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 8]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.1ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 9]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Builders Arms"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Builders Arms"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:03:06.881299"], ["updated_at", "2021-10-24 02:03:06.881299"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Bad Frankie"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bad Frankie"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:03:06.884104"], ["updated_at", "2021-10-24 02:03:06.884104"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Above Board"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Above Board"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:03:06.886699"], ["updated_at", "2021-10-24 02:03:06.886699"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Primo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Primo"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:03:06.889509"], ["updated_at", "2021-10-24 02:03:06.889509"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Catfish"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Catfish"], ["location", "Melbourne, Australia "], ["image", ""], ["created_at", "2021-10-24 02:03:06.896241"], ["updated_at", "2021-10-24 02:03:06.896241"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Baxter Inn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Baxter Inn"], ["location", "Sydney, Australia"], ["image", ""], ["created_at", "2021-10-24 02:03:06.899249"], ["updated_at", "2021-10-24 02:03:06.899249"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Continental Deli"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Continental Deli"], ["location", "Sydney, Australia"], ["image", ""], ["created_at", "2021-10-24 02:03:06.902011"], ["updated_at", "2021-10-24 02:03:06.902011"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Belle's Hot Chicken"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Belle's Hot Chicken"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:03:06.904737"], ["updated_at", "2021-10-24 02:03:06.904737"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mVenue Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Besk"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mVenue Create (1.3ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Besk"], ["location", "Perth, Australia"], ["image", ""], ["created_at", "2021-10-24 02:03:06.911355"], ["updated_at", "2021-10-24 02:03:06.911355"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "venues"[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCategory::HABTM_Venues Destroy (0.2ms)[0m  [1m[31mDELETE FROM "categories_venues" WHERE "categories_venues"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mCategory Destroy (0.2ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCategory::HABTM_Venues Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories_venues" WHERE "categories_venues"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ db/seeds.rb:20
+  [1m[36mCategory Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCategory::HABTM_Venues Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories_venues" WHERE "categories_venues"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ db/seeds.rb:20
+  [1m[36mCategory Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCategory::HABTM_Venues Destroy (0.2ms)[0m  [1m[31mDELETE FROM "categories_venues" WHERE "categories_venues"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ db/seeds.rb:20
+  [1m[36mCategory Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCategory::HABTM_Venues Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories_venues" WHERE "categories_venues"."category_id" = $1[0m  [["category_id", 5]]
+  ↳ db/seeds.rb:20
+  [1m[36mCategory Destroy (0.2ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bar"], ["created_at", "2021-10-24 02:03:06.935486"], ["updated_at", "2021-10-24 02:03:06.935486"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Restaurant"], ["created_at", "2021-10-24 02:03:06.937799"], ["updated_at", "2021-10-24 02:03:06.937799"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pub"], ["created_at", "2021-10-24 02:03:06.940042"], ["updated_at", "2021-10-24 02:03:06.940042"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cocktail Bar"], ["created_at", "2021-10-24 02:03:06.943394"], ["updated_at", "2021-10-24 02:03:06.943394"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dive Bar"], ["created_at", "2021-10-24 02:03:06.948565"], ["updated_at", "2021-10-24 02:03:06.948565"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ db/seeds.rb:26
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites"[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mFavourite::HABTM_Venues Destroy (2.5ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoriesVenues (20211024020103)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE "categories_venues"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20211024020103"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20211024014500)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20211024014500"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateFavouritesVenues (20211024011038)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "favourites_venues"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20211024011038"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateFavourites (20211024010546)
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.1ms)[0m  [1m[35mDROP TABLE "favourites"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (8.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20211024010546"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateFavourites (20211024010546)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "favourites" ("id" bigserial primary key, "name" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211024010546_create_favourites.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024010546"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFavouritesVenues (20211024011038)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "favourites_venues" ("favourite_id" integer, "venue_id" integer)[0m
+  ↳ db/migrate/20211024011038_create_favourites_venues.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024011038"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20211024014500)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211024014500_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024014500"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoriesVenues (20211024020103)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "categories_venues" ("category_id" integer, "venue_id" integer)[0m
+  ↳ db/migrate/20211024020103_create_categories_venues.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211024020103"]]
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8617840095095367990)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lex@lex.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Lex"], ["last_name", "Poulsen"], ["email", "lex@lex.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$4w09A/4l1LYTW7.NDz7I1ubm8abt2SnZcYLCC/EanIbQxEPcr8ZHO"], ["created_at", "2021-10-24 02:05:32.413016"], ["updated_at", "2021-10-24 02:05:32.413016"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "smithy@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["email", "smithy@ga.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$I9OhEaitlCtqkBQDW9/nueDBTeaN.5cNGneQka.sN3a06qzYGHTD."], ["created_at", "2021-10-24 02:05:32.610543"], ["updated_at", "2021-10-24 02:05:32.610543"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joel@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Joel"], ["last_name", "Turnbull"], ["email", "joel@ga.com"], ["location", "Sydney, Australia"], ["password_digest", "$2a$12$.qnRdXnggZQQVaUqMtu7me4I2Mvoyim5wcQ7wxCTWdcrCLLsn/A0."], ["created_at", "2021-10-24 02:05:32.802456"], ["updated_at", "2021-10-24 02:05:32.802456"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asmith@ga.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "location", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alice"], ["last_name", "Smith"], ["email", "asmith@ga.com"], ["location", "Melbourne, Australia"], ["password_digest", "$2a$12$sla9B1zMhzz/HAS.b2J4UuBEXTlroon4rQiifXALt0nqq2cqUs22K"], ["created_at", "2021-10-24 02:05:33.000341"], ["updated_at", "2021-10-24 02:05:33.000341"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:6
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 10]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.3ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 11]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 12]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 13]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 14]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.1ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 15]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 16]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 17]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mVenue::HABTM_Favourites Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."venue_id" = $1[0m  [["venue_id", 18]]
+  ↳ db/seeds.rb:8
+  [1m[36mVenue Destroy (0.1ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Builders Arms"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Builders Arms"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:05:33.044227"], ["updated_at", "2021-10-24 02:05:33.044227"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Bad Frankie"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bad Frankie"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:05:33.046914"], ["updated_at", "2021-10-24 02:05:33.046914"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mVenue Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Above Board"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Above Board"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:05:33.049820"], ["updated_at", "2021-10-24 02:05:33.049820"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mVenue Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Primo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Primo"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:05:33.056824"], ["updated_at", "2021-10-24 02:05:33.056824"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Catfish"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Catfish"], ["location", "Melbourne, Australia "], ["image", ""], ["created_at", "2021-10-24 02:05:33.059674"], ["updated_at", "2021-10-24 02:05:33.059674"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVenue Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "The Baxter Inn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Baxter Inn"], ["location", "Sydney, Australia"], ["image", ""], ["created_at", "2021-10-24 02:05:33.062183"], ["updated_at", "2021-10-24 02:05:33.062183"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Continental Deli"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Continental Deli"], ["location", "Sydney, Australia"], ["image", ""], ["created_at", "2021-10-24 02:05:33.064885"], ["updated_at", "2021-10-24 02:05:33.064885"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mVenue Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Belle's Hot Chicken"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mVenue Create (0.1ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Belle's Hot Chicken"], ["location", "Melbourne, Australia"], ["image", ""], ["created_at", "2021-10-24 02:05:33.067261"], ["updated_at", "2021-10-24 02:05:33.067261"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mVenue Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 LIMIT $2[0m  [["name", "Besk"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Besk"], ["location", "Perth, Australia"], ["image", ""], ["created_at", "2021-10-24 02:05:33.069478"], ["updated_at", "2021-10-24 02:05:33.069478"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "venues"[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bar"], ["created_at", "2021-10-24 02:05:33.077950"], ["updated_at", "2021-10-24 02:05:33.077950"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Restaurant"], ["created_at", "2021-10-24 02:05:33.080285"], ["updated_at", "2021-10-24 02:05:33.080285"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pub"], ["created_at", "2021-10-24 02:05:33.082590"], ["updated_at", "2021-10-24 02:05:33.082590"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cocktail Bar"], ["created_at", "2021-10-24 02:05:33.084628"], ["updated_at", "2021-10-24 02:05:33.084628"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dive Bar"], ["created_at", "2021-10-24 02:05:33.086644"], ["updated_at", "2021-10-24 02:05:33.086644"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ db/seeds.rb:26
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites"[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mFavourite Create (0.3ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lex Night Out"], ["created_at", "2021-10-24 02:05:33.093720"], ["updated_at", "2021-10-24 02:05:33.093720"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFavourite Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Quiet Wines"], ["created_at", "2021-10-24 02:05:33.096138"], ["updated_at", "2021-10-24 02:05:33.096138"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mFavourite Create (0.5ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Celebrate!"], ["created_at", "2021-10-24 02:05:33.099275"], ["updated_at", "2021-10-24 02:05:33.099275"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mFavourite Create (0.6ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cocktails"], ["created_at", "2021-10-24 02:05:33.104030"], ["updated_at", "2021-10-24 02:05:33.104030"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favourites"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mFavourite::HABTM_Venues Create (1.6ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 1], ["venue_id", 19]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mFavourite::HABTM_Venues Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 1], ["venue_id", 20]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mFavourite::HABTM_Venues Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 1], ["venue_id", 21]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mFavourite::HABTM_Venues Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 2], ["venue_id", 19]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mFavourite::HABTM_Venues Create (0.1ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 2], ["venue_id", 26]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mFavourite::HABTM_Venues Create (0.1ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 3], ["venue_id", 26]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mFavourite::HABTM_Venues Create (0.1ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 3], ["venue_id", 21]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mFavourite::HABTM_Venues Create (0.1ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 3], ["venue_id", 22]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mFavourite::HABTM_Venues Create (0.1ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 4], ["venue_id", 20]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mFavourite::HABTM_Venues Create (0.1ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 4], ["venue_id", 21]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mFavourite::HABTM_Venues Create (0.1ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 4], ["venue_id", 24]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mFavourite::HABTM_Venues Create (0.1ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 4], ["venue_id", 27]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mFavourite Update (0.2ms)[0m  [1m[33mUPDATE "favourites" SET "user_id" = $1, "updated_at" = $2 WHERE "favourites"."id" = $3[0m  [["user_id", 9], ["updated_at", "2021-10-24 02:05:33.162723"], ["id", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mFavourite Update (0.2ms)[0m  [1m[33mUPDATE "favourites" SET "user_id" = $1, "updated_at" = $2 WHERE "favourites"."id" = $3[0m  [["user_id", 10], ["updated_at", "2021-10-24 02:05:33.165423"], ["id", 4]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:44
+  [1m[36mFavourite Update (0.1ms)[0m  [1m[33mUPDATE "favourites" SET "user_id" = $1, "updated_at" = $2 WHERE "favourites"."id" = $3[0m  [["user_id", 11], ["updated_at", "2021-10-24 02:05:33.167734"], ["id", 2]]
+  ↳ db/seeds.rb:44
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mFavourite Update (0.2ms)[0m  [1m[33mUPDATE "favourites" SET "user_id" = $1, "updated_at" = $2 WHERE "favourites"."id" = $3[0m  [["user_id", 12], ["updated_at", "2021-10-24 02:05:33.170217"], ["id", 3]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" ORDER BY "favourites"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" ORDER BY "favourites"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2021-10-24 13:25:50 +1100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lexicon/.rvm/gems/ruby-2.7.4/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 568ms (Views: 564.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 13:27:22 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2021-10-24 13:29:13 +1100
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+config/routes.rb:5:in `[]'
+config/routes.rb:5:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/rails/info/routes" for ::1 at 2021-10-24 13:29:22 +1100
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/lexicon/.rvm/gems/ruby-2.7.4/gems/railties-5.2.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/lexicon/.rvm/gems/ruby-2.7.4/gems/actionpack-5.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [11 times] (2.7ms)
+  Rendered /home/lexicon/.rvm/gems/ruby-2.7.4/gems/actionpack-5.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.4ms)
+  Rendered /home/lexicon/.rvm/gems/ruby-2.7.4/gems/railties-5.2.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 13:37:26 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-24 13:37:42 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"esK+HvXpld5Z99fty9rkly03LofjlYABIGlixP8fWry6GzVZL2PdheV10QZbpQnriuz5k6h9x3D7dZNcULw04g==", "email"=>"lex@lex.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+No template found for SessionController#create, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 14:17:28 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-24 14:17:33 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0XalnAgm1IeWQZ9JlCl2rDaZKsQ/B44eCqmsBueFrOARry7b0qyc3CrDmaIEVpvQkUL90HTvyW/RtV2eSCbCvg==", "email"=>"lex@lex.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lex@lex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 209ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 14:17:34 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-24 14:24:15 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j/lh01atPHyYVMMfNea7J2JqJ5SOwXK81WmuQT4ahq9PIOqUjCd0JyTWxfSlmVZbxbHwgMUpNc0OdV/Zkbno8Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 14:24:15 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 14:24:44 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/layouts/application.html.erb:20: syntax error, unexpected ')'
+....append=( link_to "Sign Up",  );@output_buffer.safe_append='
+...                              ^
+/home/lexicon/Projects/project-1/dinnr/app/views/layouts/application.html.erb:21: syntax error, unexpected `end', expecting ')'
+'.freeze;         end 
+                  ^~~
+/home/lexicon/Projects/project-1/dinnr/app/views/layouts/application.html.erb:31: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/layouts/application.html.erb:33: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/layouts/application.html.erb:20: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:21: syntax error, unexpected `end', expecting ')'
+app/views/layouts/application.html.erb:31: syntax error, unexpected `ensure', expecting ')'
+app/views/layouts/application.html.erb:33: syntax error, unexpected `end', expecting ')'
+Started GET "/login" for ::1 at 2021-10-24 14:25:12 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/layouts/application.html.erb:20: syntax error, unexpected ')'
+....append=( link_to "Sign Up",  );@output_buffer.safe_append='
+...                              ^
+/home/lexicon/Projects/project-1/dinnr/app/views/layouts/application.html.erb:21: syntax error, unexpected `end', expecting ')'
+'.freeze;         end 
+                  ^~~
+/home/lexicon/Projects/project-1/dinnr/app/views/layouts/application.html.erb:31: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/layouts/application.html.erb:33: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/layouts/application.html.erb:20: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:21: syntax error, unexpected `end', expecting ')'
+app/views/layouts/application.html.erb:31: syntax error, unexpected `ensure', expecting ')'
+app/views/layouts/application.html.erb:33: syntax error, unexpected `end', expecting ')'
+Started GET "/login" for ::1 at 2021-10-24 14:25:27 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 14:25:33 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-10-24 14:25:35 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-10-24 14:34:33 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 10.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/new" for ::1 at 2021-10-24 14:34:34 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-10-24 14:40:43 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-10-24 14:45:09 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-10-24 14:45:29 +1100
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2021-10-24 14:49:06 +1100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A6R37hoB8LupHbWMb0ovxqpOgSjHmK3W/+KXRiSIRcHDffypwIu44BWfs2f/NcK6DZVWPIxw6qck/mbeiysrnw==", "user"=>{"email"=>"craigsy@ga.com", "first_name"=>"Craig", "last_name"=>"Craigsington", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 229ms (Views: 13.0ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/users" for ::1 at 2021-10-24 14:49:15 +1100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"04l15wGwX8zN+vzbosJNCZnYOFlMqTjcAdDB34et/pETUP6g2zoXl3F4+jAyvaB1PgPvTQdBf63azDBHKA6Qzw==", "user"=>{"email"=>"craigsy@ga.com", "first_name"=>"Craig", "last_name"=>"Craigsington", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Craig"], ["last_name", "Craigsington"], ["email", "craigsy@ga.com"], ["password_digest", "$2a$12$CySVJ9EWFUJHYz701amj8OFJZebnz9rs5PqD05AsRHaCPjGaPPf7W"], ["created_at", "2021-10-24 03:49:15.256116"], ["updated_at", "2021-10-24 03:49:15.256116"]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Redirected to http://localhost:3000/
+Completed 302 Found in 207ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 14:49:15 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-24 14:52:03 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9rF86aQz+TZXygJ4OX93d4xqxDEYsgrYt5d7VnL2DZo2aPeufrmxbetIBJOpAJoLK7ETJVNaTalsi4rO3VVjxA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 14:52:03 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-24 14:58:12 +1100
+Processing by VenuesController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :check_for_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 14:58:12 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-24 14:58:24 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1xjm6t2s5bahllmiw0JX9NY7qglDJU+fljyFLmWdB7gXwW2tByat7R0UX0lTPbqIceB9HQjNCO5NIHS2yj5p5g==", "email"=>"craigsy@ga.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 205ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 14:58:24 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/venue" for ::1 at 2021-10-24 14:58:30 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/venue"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/venues" for ::1 at 2021-10-24 14:58:34 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  Rendered venues/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-24 14:59:37 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-24 15:31:42 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (1.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 54ms (Views: 28.6ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/venues/new" for ::1 at 2021-10-24 15:31:44 +1100
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 406 Not Acceptable in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::UnknownFormat (VenuesController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.6) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.6) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.6) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.6) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.6) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.6) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.6) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.6) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.6) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.6) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.6) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/venues/new" for ::1 at 2021-10-24 15:32:17 +1100
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-24 15:32:33 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/+tH9tDUjfZF8OUpc3muEDy/k0xrHwTvAa9UsCCNPX8/MsyxCl7Frfly48LjBkNsm2REWCD3Q57as6Uojy5TIQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:32:33 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/venues/new" for ::1 at 2021-10-24 15:32:39 +1100
+Processing by VenuesController#new as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :check_for_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 15:32:39 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 15:32:48 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-24 15:32:56 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VnOQA0CHaEuHvwDyBogsHTlAWs+meYfi5IoYqb18CJjhm2rJojDIAHWev2BYHGzwcuRA62FgCg9uzpSb3Vxong==", "email"=>"lex@lex.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lex@lex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:32:56 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:35:20 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:35:37 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:35:48 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:35:54 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:36:31 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:36:50 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:37:02 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:37:04 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:37:39 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:38:20 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-24 15:38:22 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:39:09 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 13.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:40:18 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-24 15:45:52 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nxXNNASknihBX7DwAeKzRsn0NWAllZ76dp8Igv4lnBNfzEZz3i7Wc/3dthuRnV46bi/idG592Yutg/kaUYbyTQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 15:45:52 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 16:32:53 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-24 16:32:58 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LxwWLSfr9pAAgdAlYwz/tjfDGquIJCuE31cxjWkuw5CY9OznxVxW2/Kgb7c9mL9bfGcAj089pmlVE72/CQ6jlg==", "email"=>"lex@lex.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lex@lex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 16:32:58 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2021-10-24 16:33:46 +1100
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/lexicon/.rvm/gems/ruby-2.7.4/gems/railties-5.2.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/lexicon/.rvm/gems/ruby-2.7.4/gems/actionpack-5.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (24.7ms)
+  Rendered /home/lexicon/.rvm/gems/ruby-2.7.4/gems/actionpack-5.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /home/lexicon/.rvm/gems/ruby-2.7.4/gems/railties-5.2.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 46ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 16:34:07 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 16:34:08 +1100
+  
+ActionController::RoutingError (uninitialized constant FavouritesController):
+  
+activesupport (5.2.6) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.6) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.6) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.6) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.6) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.6) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.6) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/favourites" for ::1 at 2021-10-24 16:36:14 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.4ms)
+
+
+  
+NameError (uninitialized constant FavouritesController::Favourites):
+  
+app/controllers/favourites_controller.rb:4:in `index'
+Started GET "/favourites" for ::1 at 2021-10-24 16:36:37 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Class:0x00007f1fa86a2920>
+Did you mean?  super):
+  
+app/controllers/favourites_controller.rb:4:in `index'
+Started GET "/" for ::1 at 2021-10-24 16:41:43 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 25ms (Views: 15.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 16:41:46 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Class:0x00007f1f98296af8>
+Did you mean?  super):
+  
+app/controllers/favourites_controller.rb:4:in `index'
+  [1m[36mFavourite Load (1.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" ORDER BY "favourites"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:43:26 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:43:27 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:43:31 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:43:38 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:43:48 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:43:49 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:43:53 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:44:04 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:44:05 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:44:07 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:44:08 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:44:08 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:44:33 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:44:34 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:45:11 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:45:23 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:45:27 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:45:28 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:45:35 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:45:38 +1100
+Started PUT "/__web_console/repl_sessions/03d99ed60737b30cdd769eab78fe29a0" for ::1 at 2021-10-24 16:45:38 +1100
+Started GET "/favourites" for ::1 at 2021-10-24 16:46:00 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.6ms)
+
+
+  
+ArgumentError (Unsupported argument type: 9 (Integer)):
+  
+app/controllers/favourites_controller.rb:4:in `index'
+Started GET "/favourites" for ::1 at 2021-10-24 16:48:03 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 2.1ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<FavouritesController:0x00007f1fa883e4f0>
+Did you mean?  users_url):
+  
+app/controllers/favourites_controller.rb:4:in `index'
+Started GET "/favourites" for ::1 at 2021-10-24 16:48:34 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 2.4ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<FavouritesController:0x00007f1fa86e5f18>
+Did you mean?  users_url):
+  
+app/controllers/favourites_controller.rb:4:in `index'
+Started GET "/favourites" for ::1 at 2021-10-24 16:48:36 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.1ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<FavouritesController:0x00007f1f90044528>
+Did you mean?  users_url):
+  
+app/controllers/favourites_controller.rb:4:in `index'
+Started PUT "/__web_console/repl_sessions/7a1e1e875635fb026812d680ca250394" for ::1 at 2021-10-24 16:51:37 +1100
+Started PUT "/__web_console/repl_sessions/7a1e1e875635fb026812d680ca250394" for ::1 at 2021-10-24 16:51:39 +1100
+Started PUT "/__web_console/repl_sessions/7a1e1e875635fb026812d680ca250394" for ::1 at 2021-10-24 16:51:44 +1100
+Started PUT "/__web_console/repl_sessions/7a1e1e875635fb026812d680ca250394" for ::1 at 2021-10-24 16:51:47 +1100
+  [1m[36mFavourite Load (1.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1 LIMIT $2[0m  [["user_id", 9], ["LIMIT", 11]]
+  ↳ /home/lexicon/.rvm/gems/ruby-2.7.4/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Started GET "/favourites" for ::1 at 2021-10-24 16:54:05 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 406 Not Acceptable in 16ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionController::UnknownFormat (FavouritesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.6) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.6) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.6) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.6) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.6) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.6) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.6) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.6) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.6) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.6) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.6) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/favourites" for ::1 at 2021-10-24 16:54:59 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 16:55:07 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 16:56:22 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 28ms (Views: 22.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 16:56:43 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 43ms (Views: 39.2ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mFavourite Load (2.4ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" ORDER BY "favourites"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+Started GET "/favourites" for ::1 at 2021-10-24 16:59:32 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:3
+  [1m[36mVenue Load (1.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/index.html.erb:5
+  Rendered favourites/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 51ms (Views: 44.5ms | ActiveRecord: 4.2ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-24 17:00:09 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/jHx2qvBYvMyZ4W7dQ1sS6E2ZhOGX1LzA+kU6oZMucU+6HqdcUsqqI7lg1DlcoE3Bu2xB823FYLY9eVyKe/Xmw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:00:09 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 17:00:11 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:00:22 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 17:00:26 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-24 17:00:50 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t/qE7FPsv/mxFWyrEJLst909OLC8H8Vv8KFUC4Vi958AEn4msVsfskM00zlOBqxalpkilHsGSIJ65dg55UKXmQ==", "email"=>"asmith@ga.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asmith@ga.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 213ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:00:50 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 17:00:57 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/views/favourites/index.html.erb:3
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 3]]
+  ↳ app/views/favourites/index.html.erb:5
+  Rendered favourites/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:01:39 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-24 17:01:40 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kJv5sZRY2Z1T790/uXM8vgD0wagWlQYqEN9Xj/UJv31QQnL2TtKRxu9t29QpDNHCpy8WvF19QVvLw6YXWqrRIw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:01:40 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-10-24 17:01:47 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-10-24 17:02:05 +1100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RoUoB6GNb6j/FNX1ieF+JEH0soAZqLTYKtsKM8ZWoaOckg/xxImkDrvWyrNt91ENNRwpjVznguOkl7v03Dwx6g==", "user"=>{"email"=>"jess@jess.com", "first_name"=>"Jessica", "last_name"=>"Clargg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jess@jess.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Create (4.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Jessica"], ["last_name", "Clargg"], ["email", "jess@jess.com"], ["password_digest", "$2a$12$O1/LLXwEJ8miuGUiXUZwnOjcpUHpMH0My1hApxHZ1b779mVrD7Xo."], ["created_at", "2021-10-24 06:02:05.487345"], ["updated_at", "2021-10-24 06:02:05.487345"]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Redirected to http://localhost:3000/
+Completed 302 Found in 209ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:02:05 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 17:02:09 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-24 17:02:31 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:02:52 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-24 17:03:03 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"57l/cY1OUaPwF8+LbSH/Tdrm0NW730rdznv3i9cgfVcnYPQ2V8QZ+EyVyWD9XhIxfT0HwfA3DawVZwYTeIMTCQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:03:03 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-10-24 17:03:54 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 17:03:57 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-24 17:04:33 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bo1UpCEpBSbKGO1Qw53qrl0yFL+X9H99jZJ6A1JGu0TZZa5uw56lbTg5UsKdCapDFpYOm1Dt8pAH1vYxMmbbQg==", "email"=>"craigsy@ga.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 190ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:04:33 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 17:04:35 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 69ms (Views: 62.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-24 17:05:22 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (1.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 108ms (Views: 97.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/venues/new" for ::1 at 2021-10-24 17:05:24 +1100
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (0.2ms)
+  Rendered venues/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues/new" for ::1 at 2021-10-24 17:35:22 +1100
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (0.6ms)
+  Rendered venues/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 101ms (Views: 84.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 17:35:24 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"favourites"}, missing required keys: [:id]):
+     7:   <% end %>
+     8: <% end %>
+     9: 
+    10: <%= link_to "Add to", edit_favourite_path %>
+  
+app/views/favourites/index.html.erb:10:in `_app_views_favourites_index_html_erb__4031057289947199532_76460'
+Started GET "/favourites" for ::1 at 2021-10-24 17:36:54 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  ids):
+     7:   <% end %>
+     8: <% end %>
+     9: 
+    10: <%= link_to "Add to", edit_favourite_path(@favourites.id) %>
+  
+app/views/favourites/index.html.erb:10:in `_app_views_favourites_index_html_erb__4031057289947199532_76980'
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" ORDER BY "favourites"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/favourites" for ::1 at 2021-10-24 17:37:53 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:10: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+..., edit_favourite_path favourite );
+...                      ^~~~~~~~~
+):
+  
+app/views/favourites/index.html.erb:10: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+Started GET "/favourites" for ::1 at 2021-10-24 17:38:17 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (77.9ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `favourite' for #<#<Class:0x00007f1fa88b36b0>:0x00007f1f94afe988>
+Did you mean?  @favourites):
+     7:   <% end %>
+     8: <% end %>
+     9: 
+    10: <%= link_to "Add to", edit_favourite_path(favourite) %>
+  
+app/views/favourites/index.html.erb:10:in `_app_views_favourites_index_html_erb__4031057289947199532_78040'
+Started GET "/favourites" for ::1 at 2021-10-24 17:39:05 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 9.8ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:10: syntax error, unexpected instance variable, expecting `do' or '{' or '('
+... edit_favourite_path @favourite );
+...                     ^~~~~~~~~~
+):
+  
+app/views/favourites/index.html.erb:10: syntax error, unexpected instance variable, expecting `do' or '{' or '('
+Started GET "/favourites" for ::1 at 2021-10-24 17:39:25 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:10: syntax error, unexpected ',', expecting ')'
+...fer.append=( link_to ("Add to", edit_favourite_path @favouri...
+...                              ^
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:10: syntax error, unexpected ')', expecting `end'
+...it_favourite_path @favourite) );
+...                              ^
+):
+  
+app/views/favourites/index.html.erb:10: syntax error, unexpected ',', expecting ')'
+app/views/favourites/index.html.erb:10: syntax error, unexpected ')', expecting `end'
+Started GET "/favourites" for ::1 at 2021-10-24 17:40:46 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (14.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (4.0ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (29.0ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 18.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"favourites", :id=>nil}, missing required keys: [:id]):
+     7:   <% end %>
+     8: <% end %>
+     9: 
+    10: <%= link_to "Add to", edit_favourite_path(@favourite) %>
+  
+app/views/favourites/index.html.erb:10:in `_app_views_favourites_index_html_erb__4031057289947199532_79620'
+Started GET "/favourites" for ::1 at 2021-10-24 17:49:59 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 19.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"favourites", :id=>nil}, missing required keys: [:id]):
+     7:   <% end %>
+     8: <% end %>
+     9: 
+    10: <%= link_to "Add to", edit_favourite_path(@favourite) %>
+  
+app/views/favourites/index.html.erb:10:in `_app_views_favourites_index_html_erb__4031057289947199532_83880'
+Started PUT "/__web_console/repl_sessions/fa5b6cac071a3931f2514df68f404410" for ::1 at 2021-10-24 17:51:21 +1100
+Started PUT "/__web_console/repl_sessions/fa5b6cac071a3931f2514df68f404410" for ::1 at 2021-10-24 17:51:23 +1100
+Started PUT "/__web_console/repl_sessions/fa5b6cac071a3931f2514df68f404410" for ::1 at 2021-10-24 17:51:24 +1100
+Started PUT "/__web_console/repl_sessions/fa5b6cac071a3931f2514df68f404410" for ::1 at 2021-10-24 17:51:45 +1100
+Started PUT "/__web_console/repl_sessions/fa5b6cac071a3931f2514df68f404410" for ::1 at 2021-10-24 17:51:48 +1100
+Started PUT "/__web_console/repl_sessions/fa5b6cac071a3931f2514df68f404410" for ::1 at 2021-10-24 17:51:52 +1100
+Started PUT "/__web_console/repl_sessions/fa5b6cac071a3931f2514df68f404410" for ::1 at 2021-10-24 17:51:53 +1100
+Started GET "/venues" for ::1 at 2021-10-24 17:52:03 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 29ms (Views: 23.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 17:52:06 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-24 17:52:07 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/venues/new" for ::1 at 2021-10-24 17:52:09 +1100
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (0.3ms)
+  Rendered venues/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 17:52:11 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"favourites", :id=>nil}, missing required keys: [:id]):
+     7:   <% end %>
+     8: <% end %>
+     9: 
+    10: <%= link_to "Add to", edit_favourite_path(@favourite) %>
+  
+app/views/favourites/index.html.erb:10:in `_app_views_favourites_index_html_erb__4031057289947199532_84800'
+Started GET "/rails/info/routes" for ::1 at 2021-10-24 18:01:53 +1100
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lexicon/.rvm/gems/ruby-2.7.4/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/lexicon/.rvm/gems/ruby-2.7.4/gems/railties-5.2.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/lexicon/.rvm/gems/ruby-2.7.4/gems/actionpack-5.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (5.3ms)
+  Rendered /home/lexicon/.rvm/gems/ruby-2.7.4/gems/actionpack-5.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /home/lexicon/.rvm/gems/ruby-2.7.4/gems/railties-5.2.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 25ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 18:01:55 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.8ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 8.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"favourites", :id=>nil}, missing required keys: [:id]):
+     7:   <% end %>
+     8: <% end %>
+     9: 
+    10: <%= link_to "Add to", edit_favourite_path(@favourite) %>
+  
+app/views/favourites/index.html.erb:10:in `_app_views_favourites_index_html_erb___241678056044794710_61580'
+Started GET "/favourites" for ::1 at 2021-10-24 18:04:42 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 189ms (Views: 186.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/favourites/%23%3CFavourite::ActiveRecord_Associations_CollectionProxy:0x00007f71ac0c5bf0%3E/edit" for ::1 at 2021-10-24 18:04:52 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"#<Favourite::ActiveRecord_Associations_CollectionProxy:0x00007f71ac0c5bf0>"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-24 18:05:58 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FTEYxPdIo+c+hM2tHW2C3mWXXmIubT9hyH/wN9B4LFjV6JODLcLrvIIGy0aNEm+iwkyJdmWFeBATYwGvf9tCBg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 18:05:58 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-24 18:06:01 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-24 18:06:09 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iG9j79hukJbqab0kXhxwb+OflaV1jy+CzCjsyZdZhwA/h5klOtkw3RhIArYAiDCCqDuPgbKWom9GbGD793nnBg==", "email"=>"lex@lex.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lex@lex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 191ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2021-10-24 18:06:09 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 18:06:12 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:3
+  [1m[36mVenue Load (1.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/index.html.erb:5
+  Rendered favourites/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 38ms (Views: 30.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/favourites/%23%3CFavourite::ActiveRecord_Associations_CollectionProxy:0x00007f71940192a0%3E/edit" for ::1 at 2021-10-24 18:06:18 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"#<Favourite::ActiveRecord_Associations_CollectionProxy:0x00007f71940192a0>"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-24 18:06:37 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.4ms)
+
+

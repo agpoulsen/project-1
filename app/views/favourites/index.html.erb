@@ -1,0 +1,10 @@
+<h1><%= @current_user.first_name %>'s Favourites</h1>
+
+<% @favourites.each do |f| %>
+  <h2><%= f.name %></h2>
+  <% f.venues.each do |v| %>
+    <p><%= v.name %></p>
+  <% end %>
+<% end %>
+
+<%= link_to "Add to", edit_favourite_path(@favourites) %>
