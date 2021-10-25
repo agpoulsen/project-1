@@ -35,6 +35,13 @@ class FavouritesController < ApplicationController
     redirect_to favourites_path
   end
 
+  def remove
+    favourite = Favourite.find params[:favourite_id]
+    venue = Venue.find params[:venue_id]
+    favourite.venues.delete(venue)
+    redirect_to favourite_path(favourite)
+  end
+
   private
   def user_params
     params.require(:favourite).permit(:name)

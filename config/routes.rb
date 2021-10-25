@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   resources :venues
   resources :favourites
 
+  delete '/favourites/:favourite_id/:venue_id' => 'favourites#remove', :as => 'remove_favourite'
+
 
 end

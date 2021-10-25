@@ -1,7 +1,7 @@
 <h1>Edit <%= @favourite.name %> </h1>
 
 <% @favourite.venues.each do |venue| %>
-  <p><%= venue.name %></p> <%= button_to "Remove from Favourites" %>
+  <p><%= venue.name %></p> <%= button_to "Remove from Favourites", remove_favourite_path(@favourite.id, venue.id), :method => 'delete' %>
 <% end %>
 
 <%= form_for @favourite do |f| %>
