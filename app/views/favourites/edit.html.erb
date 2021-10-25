@@ -1,1 +1,12 @@
-<h1>Edit coming soon</h1>
+<h1>Edit <%= @favourite.name %> </h1>
+
+<% @favourite.venues.each do |venue| %>
+  <p><%= venue.name %></p> <%= button_to "Remove from Favourites" %>
+<% end %>
+
+<%= form_for @favourite do |f| %>
+  <%= f.label :venue_id %>
+  <%= f.select :venue_ids, Venue.pluck(:name, :id) %>
+  <%= f.submit "Add to #{@favourite.name}" %>
+
+<% end %>

@@ -2687,3 +2687,2376 @@ Processing by VenuesController#index as HTML
 Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2021-10-24 18:21:42 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-24 18:21:54 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:3
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/index.html.erb:5
+  Rendered favourites/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 42ms (Views: 29.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2021-10-25 09:59:40 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 55ms (Views: 46.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-25 09:59:41 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7IVaUc/8O3AsJaaSK502EKWNJdkoj38AdepW5r53RZgsXNEWFXZzK5CnoHm74ttsAlbyzWNnOHGu9qd+EdQrxg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-10-25 09:59:41 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-25 09:59:45 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-25 09:59:57 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eZbsFP6qHYPaeljph8sCfMEojxhFWX6Io1/ht+LeMfHOfhbeHB29yChb53vZX0KRioyVPIJA82UpG22Fgv5R9w==", "email"=>"craigsy@ga.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-10-25 09:59:57 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-25 10:00:00 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:00:02 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/favourites/%23%3CFavourite::ActiveRecord_Associations_CollectionProxy:0x00007f71acadfd20%3E/edit" for ::1 at 2021-10-25 10:00:53 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"#<Favourite::ActiveRecord_Associations_CollectionProxy:0x00007f71acadfd20>"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:02:59 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:9: else without rescue is useless
+   else 
+   ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:16: syntax error, unexpected `ensure', expecting `end'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/views/favourites/index.html.erb:9: else without rescue is useless
+app/views/favourites/index.html.erb:16: syntax error, unexpected `ensure', expecting `end'
+app/views/favourites/index.html.erb:18: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/favourites" for ::1 at 2021-10-25 10:03:19 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:9: else without rescue is useless
+ else 
+ ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:16: syntax error, unexpected `ensure', expecting `end'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/views/favourites/index.html.erb:9: else without rescue is useless
+app/views/favourites/index.html.erb:16: syntax error, unexpected `ensure', expecting `end'
+app/views/favourites/index.html.erb:18: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/favourites" for ::1 at 2021-10-25 10:04:00 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:9: else without rescue is useless
+ else 
+ ^~~~
+):
+  
+app/views/favourites/index.html.erb:9: else without rescue is useless
+Started GET "/favourites" for ::1 at 2021-10-25 10:05:28 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:9: else without rescue is useless
+ else 
+ ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:16: syntax error, unexpected `ensure', expecting `end'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/views/favourites/index.html.erb:9: else without rescue is useless
+app/views/favourites/index.html.erb:16: syntax error, unexpected `ensure', expecting `end'
+app/views/favourites/index.html.erb:18: syntax error, unexpected end-of-input, expecting `end'
+Started PUT "/__web_console/repl_sessions/97fe92d88e7d557e7a5b50ed8c69901f" for ::1 at 2021-10-25 10:08:35 +1100
+Started PUT "/__web_console/repl_sessions/97fe92d88e7d557e7a5b50ed8c69901f" for ::1 at 2021-10-25 10:08:37 +1100
+Started GET "/venues" for ::1 at 2021-10-25 10:09:39 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:09:41 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:16: syntax error, unexpected `ensure', expecting `end'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/views/favourites/index.html.erb:16: syntax error, unexpected `ensure', expecting `end'
+app/views/favourites/index.html.erb:18: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/favourites" for ::1 at 2021-10-25 10:11:46 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:13:39 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:14:53 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/new" for ::1 at 2021-10-25 10:14:56 +1100
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for FavouritesController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/favourites/new" for ::1 at 2021-10-25 10:19:02 +1100
+Processing by FavouritesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/new.html.erb within layouts/application
+  Rendered favourites/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 42ms (Views: 18.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/favourites/new" for ::1 at 2021-10-25 10:27:40 +1100
+Processing by FavouritesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/new.html.erb within layouts/application
+  Rendered favourites/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/views/favourites/new.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/favourites/new" for ::1 at 2021-10-25 10:27:52 +1100
+Processing by FavouritesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/new.html.erb within layouts/application
+  Rendered favourites/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/favourites" for ::1 at 2021-10-25 10:28:10 +1100
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for FavouritesController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/c3d39bccb3e00637971f476b976c84b9" for ::1 at 2021-10-25 10:28:59 +1100
+Started PUT "/__web_console/repl_sessions/c3d39bccb3e00637971f476b976c84b9" for ::1 at 2021-10-25 10:29:00 +1100
+Started PUT "/__web_console/repl_sessions/c3d39bccb3e00637971f476b976c84b9" for ::1 at 2021-10-25 10:45:31 +1100
+Started PUT "/__web_console/repl_sessions/c3d39bccb3e00637971f476b976c84b9" for ::1 at 2021-10-25 10:45:40 +1100
+Started PUT "/__web_console/repl_sessions/c3d39bccb3e00637971f476b976c84b9" for ::1 at 2021-10-25 10:45:42 +1100
+Started POST "/favourites" for ::1 at 2021-10-25 10:45:57 +1100
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jawqYXul5vS1XpYnha2gPHgqb7xW6jrcwCGtdm+GE1JNdaEmoS+urwnckMwV0k1A3/G4qB0Cfa0bPVzuwCV9DA==", "favourite"=>{"name"=>"Craigsy Likes a beer"}, "commit"=>"New Favourites List"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 4.7ms)
+
+
+  
+RuntimeError (sdf):
+  
+app/controllers/favourites_controller.rb:16:in `create'
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:01 +1100
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:03 +1100
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:10 +1100
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:20 +1100
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:27 +1100
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1 LIMIT $2[0m  [["user_id", 13], ["LIMIT", 11]]
+  ↳ /home/lexicon/.rvm/gems/ruby-2.7.4/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:35 +1100
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:41 +1100
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:43 +1100
+Started PUT "/__web_console/repl_sessions/879c5b9908e3b1b64842f34bacc2f7d8" for ::1 at 2021-10-25 10:46:44 +1100
+Started POST "/favourites" for ::1 at 2021-10-25 10:48:31 +1100
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jawqYXul5vS1XpYnha2gPHgqb7xW6jrcwCGtdm+GE1JNdaEmoS+urwnckMwV0k1A3/G4qB0Cfa0bPVzuwCV9DA==", "favourite"=>{"name"=>"Craigsy Likes a beer"}, "commit"=>"New Favourites List"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+No template found for FavouritesController#create, rendering head :no_content
+Completed 204 No Content in 25ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:49:13 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  Rendered favourites/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 36ms (Views: 19.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/favourites/new" for ::1 at 2021-10-25 10:49:15 +1100
+Processing by FavouritesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/new.html.erb within layouts/application
+  Rendered favourites/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 15.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/favourites" for ::1 at 2021-10-25 10:49:25 +1100
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XQk8WiNHf8+QB9snyHWiYTXiJyY1nBRAq3DbHUBxXYOJWc/0OGnRBTZ1jtbiyg6VBL3uwHHMzJLJtZp2dywOmQ==", "favourite"=>{"name"=>"Craigsy's list"}, "commit"=>"New Favourites List"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:17
+  [1m[36mFavourite Create (3.4ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Craigsy's list"], ["user_id", 13], ["created_at", "2021-10-24 23:49:25.041883"], ["updated_at", "2021-10-24 23:49:25.041883"]]
+  ↳ app/controllers/favourites_controller.rb:17
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:17
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"favourites"}, missing required keys: [:id]):
+  
+app/controllers/favourites_controller.rb:18:in `create'
+Started POST "/favourites" for ::1 at 2021-10-25 10:49:35 +1100
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YxJ6f9bYA/bVOOWhBiPTfk9jbL/nZRTETpRA0GwD+lOjy/E4DFJLrWm640qWXD4C6Li7q6yNU7WViLFIw6CUDQ==", "favourite"=>{"name"=>"Craigsy's list"}, "commit"=>"New Favourites List"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:17
+  [1m[36mFavourite Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Craigsy's list"], ["user_id", 13], ["created_at", "2021-10-24 23:49:35.644964"], ["updated_at", "2021-10-24 23:49:35.644964"]]
+  ↳ app/controllers/favourites_controller.rb:17
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:17
+Redirected to http://localhost:3000/favourites/6
+Completed 302 Found in 21ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/favourites/6" for ::1 at 2021-10-25 10:49:35 +1100
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for FavouritesController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/favourites" for ::1 at 2021-10-25 10:50:13 +1100
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YxJ6f9bYA/bVOOWhBiPTfk9jbL/nZRTETpRA0GwD+lOjy/E4DFJLrWm640qWXD4C6Li7q6yNU7WViLFIw6CUDQ==", "favourite"=>{"name"=>"Craigsy's list"}, "commit"=>"New Favourites List"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:17
+  [1m[36mFavourite Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Craigsy's list"], ["user_id", 13], ["created_at", "2021-10-24 23:50:13.280896"], ["updated_at", "2021-10-24 23:50:13.280896"]]
+  ↳ app/controllers/favourites_controller.rb:17
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:17
+Redirected to http://localhost:3000/favourites
+Completed 302 Found in 21ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:50:13 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 5]]
+  ↳ app/views/favourites/index.html.erb:6
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 6]]
+  ↳ app/views/favourites/index.html.erb:6
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 7]]
+  ↳ app/views/favourites/index.html.erb:6
+  Rendered favourites/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:50:46 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/views/favourites/index.html.erb:3
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 5]]
+  ↳ app/views/favourites/index.html.erb:6
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 6]]
+  ↳ app/views/favourites/index.html.erb:6
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 7]]
+  ↳ app/views/favourites/index.html.erb:6
+  Rendered favourites/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/login" for ::1 at 2021-10-25 10:52:33 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"l793py8nMx54wtzh30G9yAe+5Kev4iCYKZgl/MViCrlXZvzg9a17RcRA2gpPPlC0oGUzs+QKZ+nyhNRkasFk5w=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-10-25 10:52:33 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2021-10-25 10:52:36 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2021-10-25 10:52:41 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kwCoit2LlgflorVwL4XH+JyJsZ/JexMeRmz22HAi8x8k6FJAPzw2TBeDCuJxEYcV1y2ruw5invPMKHrqEAKTGQ==", "email"=>"lex@lex.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lex@lex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-10-25 10:52:42 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:52:43 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:3
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/index.html.erb:6
+  Rendered favourites/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:56:55 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:9: else without rescue is useless
+ else 
+ ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:14: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/favourites/index.html.erb:9: else without rescue is useless
+app/views/favourites/index.html.erb:14: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/favourites" for ::1 at 2021-10-25 10:57:41 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:10: else without rescue is useless
+ else 
+ ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/favourites/index.html.erb:10: else without rescue is useless
+app/views/favourites/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/" for ::1 at 2021-10-25 10:57:47 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 10:57:49 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:10: else without rescue is useless
+ else 
+ ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/favourites/index.html.erb:10: else without rescue is useless
+app/views/favourites/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/favourites" for ::1 at 2021-10-25 10:58:08 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:9: else without rescue is useless
+ else 
+ ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:14: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/favourites/index.html.erb:9: else without rescue is useless
+app/views/favourites/index.html.erb:14: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/favourites" for ::1 at 2021-10-25 10:58:26 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:10: else without rescue is useless
+ else 
+ ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/favourites/index.html.erb:10: else without rescue is useless
+app/views/favourites/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/favourites" for ::1 at 2021-10-25 10:59:23 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:10: else without rescue is useless
+ else 
+ ^~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:17: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/favourites/index.html.erb:10: else without rescue is useless
+app/views/favourites/index.html.erb:17: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/favourites" for ::1 at 2021-10-25 11:00:49 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  Rendered favourites/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/favourites/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/favourites" for ::1 at 2021-10-25 11:01:07 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favourites"}, missing required keys: [:id]):
+    2: 
+    3: 
+    4:   <% @favourites.each do |f| %>
+    5:     <%= link_to f.name, favourite_path %>
+    6: 
+    7:     <% end %>
+    8:     <%= link_to "Add to", edit_favourite_path(@favourites) %>
+  
+app/views/favourites/index.html.erb:5:in `block in _app_views_favourites_index_html_erb___241678056044794710_100780'
+app/views/favourites/index.html.erb:4:in `_app_views_favourites_index_html_erb___241678056044794710_100780'
+Started GET "/favourites" for ::1 at 2021-10-25 11:01:17 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:01:33 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/show.html.erb within layouts/application
+  Rendered favourites/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 51.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:01:59 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/show.html.erb within layouts/application
+  Rendered favourites/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 31ms (Views: 17.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:02:06 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/show.html.erb within layouts/application
+  Rendered favourites/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 13.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:02:14 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 31ms (Views: 21.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:03:17 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:03:30 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favourites/new" for ::1 at 2021-10-25 11:04:47 +1100
+Processing by FavouritesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/new.html.erb within layouts/application
+  Rendered favourites/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/favourites" for ::1 at 2021-10-25 11:04:52 +1100
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nGNywGpAREGqe36m/HsR5t3a5l0nbewNHVL+AG8PoJ5IM4FucW7qiwwJK1fWxL0S7IUvu2M9NN9/l79rWFLzhA==", "favourite"=>{"name"=>"New Night Out"}, "commit"=>"New Favourites List"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:17
+  [1m[36mFavourite Create (0.4ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "New Night Out"], ["user_id", 9], ["created_at", "2021-10-25 00:04:52.815586"], ["updated_at", "2021-10-25 00:04:52.815586"]]
+  ↳ app/controllers/favourites_controller.rb:17
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:17
+Redirected to http://localhost:3000/favourites
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:04:52 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" ORDER BY "favourites"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:05:54 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/show.html.erb within layouts/application
+  Rendered favourites/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:06:16 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/show.html.erb within layouts/application
+  Rendered favourites/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:21:04 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 4.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/favourites_controller.rb:22:in `show'
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:21:31 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:22
+  Rendering favourites/show.html.erb within layouts/application
+  Rendered favourites/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 17.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:23:20 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:22
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:23:44 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.5ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:22
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 34ms (Views: 26.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:24:07 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/%23%3CFavourite::ActiveRecord_Associations_CollectionProxy:0x00007f719c658118%3E/edit" for ::1 at 2021-10-25 11:24:16 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"#<Favourite::ActiveRecord_Associations_CollectionProxy:0x00007f719c658118>"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:27:36 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/2" for ::1 at 2021-10-25 11:27:42 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:22
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 2]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:27:57 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:22
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 11:28:39 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:28:54 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:30:14 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favourites"}, missing required keys: [:id]):
+    2: 
+    3: 
+    4:   <% @favourites.each do |f| %>
+    5:     <h2> <%= link_to f.name, favourite_path %> </h2>
+    6: 
+    7: 
+    8:     <% end %>
+  
+app/views/favourites/index.html.erb:5:in `block in _app_views_favourites_index_html_erb___241678056044794710_118420'
+app/views/favourites/index.html.erb:4:in `_app_views_favourites_index_html_erb___241678056044794710_118420'
+Started GET "/favourites" for ::1 at 2021-10-25 11:30:25 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:30:27 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:22
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/8" for ::1 at 2021-10-25 11:30:32 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:22
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 8]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/favourites/8" for ::1 at 2021-10-25 11:30:35 +1100
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for FavouritesController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/favourites/8" for ::1 at 2021-10-25 11:34:55 +1100
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for FavouritesController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/favourites/8" for ::1 at 2021-10-25 11:35:18 +1100
+Processing by FavouritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Km8ptiBw+2teVTAEGguGNlhiz78tsegkk7hKVG8HPbbqtqLx+vqzMOLXNu+KdGtK/7kYq2ZZr1VIpLvMwKRT6A==", "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:27
+  [1m[36mFavourite::HABTM_Venues Destroy (0.4ms)[0m  [1m[31mDELETE FROM "favourites_venues" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 8]]
+  ↳ app/controllers/favourites_controller.rb:27
+  [1m[36mFavourite Destroy (0.4ms)[0m  [1m[31mDELETE FROM "favourites" WHERE "favourites"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/favourites_controller.rb:27
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:27
+Redirected to http://localhost:3000/favourites
+Completed 302 Found in 36ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 11:35:18 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 11:35:32 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:22
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 31ms (Views: 24.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 11:35:34 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 11:40:36 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 29ms (Views: 12.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 11:44:31 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/edit.html.erb:3
+  Rendered favourites/edit.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/venues" for ::1 at 2021-10-25 12:50:23 +1100
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  ↳ app/views/venues/index.html.erb:3
+  Rendered venues/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 50ms (Views: 38.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 12:50:26 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 12:50:28 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.6ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (2.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 66ms (Views: 55.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 12:50:32 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:4: syntax error, unexpected ')'
+...to "Remove from Favourites",  );@output_buffer.safe_append='
+...                              ^
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:5: syntax error, unexpected `end', expecting ')'
+'.freeze; end 
+          ^~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:7: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:9: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/favourites/edit.html.erb:4: syntax error, unexpected ')'
+app/views/favourites/edit.html.erb:5: syntax error, unexpected `end', expecting ')'
+app/views/favourites/edit.html.erb:7: syntax error, unexpected `ensure', expecting ')'
+app/views/favourites/edit.html.erb:9: syntax error, unexpected `end', expecting ')'
+Started GET "/favourites/1" for ::1 at 2021-10-25 12:50:35 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 12:50:37 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:4: syntax error, unexpected ')'
+...to "Remove from Favourites",  );@output_buffer.safe_append='
+...                              ^
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:5: syntax error, unexpected `end', expecting ')'
+'.freeze; end 
+          ^~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:7: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:9: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/favourites/edit.html.erb:4: syntax error, unexpected ')'
+app/views/favourites/edit.html.erb:5: syntax error, unexpected `end', expecting ')'
+app/views/favourites/edit.html.erb:7: syntax error, unexpected `ensure', expecting ')'
+app/views/favourites/edit.html.erb:9: syntax error, unexpected `end', expecting ')'
+Started GET "/favourites/1" for ::1 at 2021-10-25 12:50:38 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 12:50:41 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.8ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.4ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:4: syntax error, unexpected ')'
+...to "Remove from Favourites",  );@output_buffer.safe_append='
+...                              ^
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:5: syntax error, unexpected `end', expecting ')'
+'.freeze; end 
+          ^~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:7: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:9: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/favourites/edit.html.erb:4: syntax error, unexpected ')'
+app/views/favourites/edit.html.erb:5: syntax error, unexpected `end', expecting ')'
+app/views/favourites/edit.html.erb:7: syntax error, unexpected `ensure', expecting ')'
+app/views/favourites/edit.html.erb:9: syntax error, unexpected `end', expecting ')'
+Started GET "/favourites/1" for ::1 at 2021-10-25 12:50:51 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 12:50:53 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  Rendered favourites/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:4: syntax error, unexpected ')'
+...to "Remove from Favourites",  );@output_buffer.safe_append='
+...                              ^
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:5: syntax error, unexpected `end', expecting ')'
+'.freeze; end 
+          ^~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:7: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/lexicon/Projects/project-1/dinnr/app/views/favourites/edit.html.erb:9: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/favourites/edit.html.erb:4: syntax error, unexpected ')'
+app/views/favourites/edit.html.erb:5: syntax error, unexpected `end', expecting ')'
+app/views/favourites/edit.html.erb:7: syntax error, unexpected `ensure', expecting ')'
+app/views/favourites/edit.html.erb:9: syntax error, unexpected `end', expecting ')'
+Started GET "/favourites/1" for ::1 at 2021-10-25 12:50:56 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 12:51:06 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/edit.html.erb:3
+  Rendered favourites/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 12:56:21 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 12:56:22 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 12:56:29 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/edit.html.erb:3
+  Rendered favourites/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 13:04:11 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/favourites/new" for ::1 at 2021-10-25 13:04:15 +1100
+Processing by FavouritesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/new.html.erb within layouts/application
+  Rendered favourites/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/favourites" for ::1 at 2021-10-25 13:04:20 +1100
+Processing by FavouritesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zq0a4aedp2wbVyMlV+qE0s+hkgLhkTtUzyaVz7HC/HQa/elPvLMJpr0ldtR9VSgm/v5b5KXB44at49Skhp+vbg==", "favourite"=>{"name"=>"New Night Out"}, "commit"=>"New Favourites List"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:21
+  [1m[36mFavourite Create (1.7ms)[0m  [1m[32mINSERT INTO "favourites" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "New Night Out"], ["user_id", 9], ["created_at", "2021-10-25 02:04:20.305331"], ["updated_at", "2021-10-25 02:04:20.305331"]]
+  ↳ app/controllers/favourites_controller.rb:21
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:21
+Redirected to http://localhost:3000/favourites
+Completed 302 Found in 7ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 13:04:20 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:04:21 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 38ms (Views: 31.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:04:23 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  Rendered favourites/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:08:43 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:08:46 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:09:03 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:09:07 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (75.0ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `venue_id' for #<Favourite:0x00007f71983a64f0>
+Did you mean?  venue_ids
+               venue_ids=):
+     6: 
+     7: <%= form_for @favourite do |f| %>
+     8:   <%= f.label :venue_id %>
+     9:   <%= f.select :venue_id, Venue.pluck(:name, :id) %>
+    10:   <%= f.submit "Add to Favourites" %>
+    11: <% end %>
+  
+app/views/favourites/edit.html.erb:9:in `block in _app_views_favourites_edit_html_erb__2298655358499155680_135320'
+app/views/favourites/edit.html.erb:7:in `_app_views_favourites_edit_html_erb__2298655358499155680_135320'
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:09:22 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/favourites/9" for ::1 at 2021-10-25 13:09:30 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t1islM77xETDQ88dFF8nTnHv3W7Ms3btg9h/+w56QRJ3gSfTFHGMH3/ByfaEIMoy1jQKeodbMZxYxI5jodkvTA==", "favourite"=>{"venue_ids"=>"22"}, "commit"=>"Add to Favourites", "id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+No template found for FavouritesController#update, rendering head :no_content
+Completed 204 No Content in 13ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:10:01 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:26
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 40ms (Views: 16.9ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:10:02 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/favourites/9" for ::1 at 2021-10-25 13:10:03 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VIHq9i9rySqfX9dOmNndmppVx0Gnin/X1BnbAzVHPKOH72pkTzecveanhFLckTdhBGWtWFkmWiXO1IfeKjPtUQ==", "favourite"=>{"venue_ids"=>"19"}, "commit"=>"Add to Favourites", "id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+RuntimeError (sdfas):
+  
+app/controllers/favourites_controller.rb:12:in `update'
+Started PUT "/__web_console/repl_sessions/a1783a49f0f4265eeff27b986934135c" for ::1 at 2021-10-25 13:10:07 +1100
+Started PUT "/__web_console/repl_sessions/a1783a49f0f4265eeff27b986934135c" for ::1 at 2021-10-25 13:10:08 +1100
+Started PUT "/__web_console/repl_sessions/a1783a49f0f4265eeff27b986934135c" for ::1 at 2021-10-25 13:12:54 +1100
+Started PUT "/__web_console/repl_sessions/a1783a49f0f4265eeff27b986934135c" for ::1 at 2021-10-25 13:12:59 +1100
+  [1m[36mVenue Load (2.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/a1783a49f0f4265eeff27b986934135c" for ::1 at 2021-10-25 13:13:45 +1100
+Started PUT "/__web_console/repl_sessions/a1783a49f0f4265eeff27b986934135c" for ::1 at 2021-10-25 13:13:46 +1100
+Started PUT "/__web_console/repl_sessions/a1783a49f0f4265eeff27b986934135c" for ::1 at 2021-10-25 13:13:47 +1100
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+Started PATCH "/favourites/9" for ::1 at 2021-10-25 13:14:28 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VE0HtQoIwJY4bmIFByOVHGMvQOsAMSwqsHoGs7GTKBeUlIzy0IKIzYTsZO6XXHhgxPSX/0vZa1trZvcrHjBGSQ==", "favourite"=>{"venue_ids"=>"19"}, "commit"=>"Add to Favourites", "id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 4.6ms)
+
+
+  
+NoMethodError (undefined method `permind' for #<ActionController::Parameters:0x00007f71ac9faae0>
+Did you mean?  permit
+               permit!):
+  
+app/controllers/favourites_controller.rb:43:in `favourite_params'
+app/controllers/favourites_controller.rb:13:in `update'
+Started PATCH "/favourites/9" for ::1 at 2021-10-25 13:14:40 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VE0HtQoIwJY4bmIFByOVHGMvQOsAMSwqsHoGs7GTKBeUlIzy0IKIzYTsZO6XXHhgxPSX/0vZa1trZvcrHjBGSQ==", "favourite"=>{"venue_ids"=>"19"}, "commit"=>"Add to Favourites", "id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+Unpermitted parameter: :venue_ids
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:13
+Redirected to http://localhost:3000/favourites/9
+Completed 302 Found in 18ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:14:40 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:28
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 13:15:07 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 13:15:08 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:28
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 13:15:12 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:15:13 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:28
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:15:14 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:15:45 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/favourites/9" for ::1 at 2021-10-25 13:15:49 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DM1Cwo6r1ZDHU3vdy2fvji5VU7dLXXEs1yZyuPkBQUTMFMmFVCGdy3vRfTZbGALyiY6EowC1Nl0MOoMgVqIvGg==", "favourite"=>{"venue_ids"=>"19"}, "commit"=>"Add to New Night Out", "id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+Unpermitted parameter: :venue_ids
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:13
+Redirected to http://localhost:3000/favourites/9
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:15:49 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:28
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 13:17:10 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 13:17:12 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:28
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 26ms (Views: 22.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 13:17:13 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/favourites/1" for ::1 at 2021-10-25 13:17:21 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WxnLCPXId4wPLu4VtGDdVYiot15KkH4Sx51kclYOWS4VIDAd024e7+NbsD4zw3ayanyoIW8OXwyfwdf5a23QTA==", "favourite"=>{"venue_ids"=>"23"}, "commit"=>"Add to Lex Night Out", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+Unpermitted parameter: :venue_ids
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:13
+Redirected to http://localhost:3000/favourites/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 13:17:21 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:28
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mFavourite Load (0.9ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFavourite Load (0.7ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 13:19:25 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 70ms (Views: 38.8ms | ActiveRecord: 7.4ms)
+
+
+Started PATCH "/favourites/1" for ::1 at 2021-10-25 13:19:28 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"21ZQkhdMlLM+Fdl5VuvLov6AQTuqZ+cgGmbuNsydiRGVb6uHMer90NJgh1LRSGBFHFReRI/5xj5COl298f4Acw==", "favourite"=>{"venue_ids"=>"23"}, "commit"=>"Add to Lex Night Out", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.8ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+Unpermitted parameter: :venue_ids
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[36mVenue Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 AND "venues"."id" != $2 LIMIT $3[0m  [["name", "The Builders Arms"], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[36mVenue Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 AND "venues"."id" != $2 LIMIT $3[0m  [["name", "Bad Frankie"], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[36mVenue Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE "venues"."name" = $1 AND "venues"."id" != $2 LIMIT $3[0m  [["name", "Above Board"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:13
+Redirected to http://localhost:3000/favourites/1
+Completed 302 Found in 13ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 13:19:28 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:28
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/1/edit" for ::1 at 2021-10-25 13:20:58 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 43ms (Views: 22.7ms | ActiveRecord: 6.6ms)
+
+
+Started PATCH "/favourites/1" for ::1 at 2021-10-25 13:21:05 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LZLS8K57WO165X2pv0DsCGYczU93OYqG0qi14hMZZ25jqynliN0xjpaQI4I440fvhMjSMFKnq5iK9AZpLnruDA==", "favourite"=>{"venue_ids"=>"26"}, "commit"=>"Add to Lex Night Out", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+RuntimeError (hell):
+  
+app/controllers/favourites_controller.rb:13:in `update'
+Started PUT "/__web_console/repl_sessions/77c6c4214058334be4b464bd9e145605" for ::1 at 2021-10-25 13:21:09 +1100
+Started PUT "/__web_console/repl_sessions/77c6c4214058334be4b464bd9e145605" for ::1 at 2021-10-25 13:21:14 +1100
+Unpermitted parameter: :venue_ids
+Started PUT "/__web_console/repl_sessions/77c6c4214058334be4b464bd9e145605" for ::1 at 2021-10-25 13:21:33 +1100
+Started PUT "/__web_console/repl_sessions/77c6c4214058334be4b464bd9e145605" for ::1 at 2021-10-25 13:21:35 +1100
+Started PUT "/__web_console/repl_sessions/77c6c4214058334be4b464bd9e145605" for ::1 at 2021-10-25 13:27:49 +1100
+Started PUT "/__web_console/repl_sessions/77c6c4214058334be4b464bd9e145605" for ::1 at 2021-10-25 13:28:01 +1100
+Started PUT "/__web_console/repl_sessions/77c6c4214058334be4b464bd9e145605" for ::1 at 2021-10-25 13:28:24 +1100
+Started PUT "/__web_console/repl_sessions/77c6c4214058334be4b464bd9e145605" for ::1 at 2021-10-25 13:28:37 +1100
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+Started PATCH "/favourites/1" for ::1 at 2021-10-25 13:30:13 +1100
+  
+SyntaxError (/home/lexicon/Projects/project-1/dinnr/app/controllers/favourites_controller.rb:13: syntax error, unexpected local variable or method, expecting `end'
+...ite.venues << Venue.find params[:favourite][:venue_ids]
+...                         ^~~~~~
+):
+  
+app/controllers/favourites_controller.rb:13: syntax error, unexpected local variable or method, expecting `end'
+Started PATCH "/favourites/1" for ::1 at 2021-10-25 13:31:11 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oKm3G24YcESvKqlAfgM/S78wWjJ7d8B/kMjH33Kt8kpgcDxctJI4HxOor6vufNI3GOuNJjCfhw5L1DZH3Q6cFA==", "favourite"=>{"venue_ids"=>"26"}, "commit"=>"Add to Lex Night Out", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:14
+  [1m[36mFavourite::HABTM_Venues Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 1], ["venue_id", 26]]
+  ↳ app/controllers/favourites_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:14
+Redirected to http://localhost:3000/favourites/1
+Completed 302 Found in 35ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/favourites/1" for ::1 at 2021-10-25 13:31:11 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:29
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 1]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites" for ::1 at 2021-10-25 13:31:55 +1100
+Processing by FavouritesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering favourites/index.html.erb within layouts/application
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT "favourites".* FROM "favourites" WHERE "favourites"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/favourites/index.html.erb:4
+  Rendered favourites/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:31:57 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:29
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:31:58 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.4ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/favourites/9" for ::1 at 2021-10-25 13:31:59 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9QolzNvoQFRpx/0f+Uhyl/cqJLbTy3Gbci7gdwlN1DwmZKVeu7QVwxA/rgO9AJhsaRpOry1nVGlo47yqFjkFzg==", "favourite"=>{"venue_ids"=>"19"}, "commit"=>"Add to New Night Out", "id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:14
+  [1m[36mFavourite::HABTM_Venues Create (0.5ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 9], ["venue_id", 19]]
+  ↳ app/controllers/favourites_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:14
+Redirected to http://localhost:3000/favourites/9
+Completed 302 Found in 8ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:31:59 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:29
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:32:00 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/favourites/9" for ::1 at 2021-10-25 13:32:05 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"by/bW3rcPJKjMZWj6RHhnWvglfQITOokGmFA68JTehu8QVvJGoBpBdrJxr+tWQtm9dD/7fbgz9YArBw23Ser6Q==", "favourite"=>{"venue_ids"=>"21"}, "commit"=>"Add to New Night Out", "id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:14
+  [1m[36mFavourite::HABTM_Venues Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 9], ["venue_id", 21]]
+  ↳ app/controllers/favourites_controller.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:14
+Redirected to http://localhost:3000/favourites/9
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:32:05 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:29
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:32:07 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 33ms (Views: 28.2ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/favourites/9" for ::1 at 2021-10-25 13:32:09 +1100
+Processing by FavouritesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"353ixeRHpIocL/X9ougVMH4eAUx8/UODVmbo/1NOOegM82JXhBvxHWXXpuHmoP/L4C5rVYJRZnFMq7QiTDroGg==", "favourite"=>{"venue_ids"=>"22"}, "commit"=>"Add to New Night Out", "id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.2ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:12
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favourites_controller.rb:14
+  [1m[36mFavourite::HABTM_Venues Create (0.2ms)[0m  [1m[32mINSERT INTO "favourites_venues" ("favourite_id", "venue_id") VALUES ($1, $2)[0m  [["favourite_id", 9], ["venue_id", 22]]
+  ↳ app/controllers/favourites_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favourites_controller.rb:14
+Redirected to http://localhost:3000/favourites/9
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/favourites/9" for ::1 at 2021-10-25 13:32:09 +1100
+Processing by FavouritesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.1ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:29
+  Rendering favourites/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/show.html.erb:3
+  Rendered favourites/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favourites/9/edit" for ::1 at 2021-10-25 13:32:15 +1100
+Processing by FavouritesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mFavourite Load (0.3ms)[0m  [1m[34mSELECT  "favourites".* FROM "favourites" WHERE "favourites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favourites_controller.rb:8
+  Rendering favourites/edit.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "favourites_venues" ON "venues"."id" = "favourites_venues"."venue_id" WHERE "favourites_venues"."favourite_id" = $1[0m  [["favourite_id", 9]]
+  ↳ app/views/favourites/edit.html.erb:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "venues"."name", "venues"."id" FROM "venues"[0m
+  ↳ app/views/favourites/edit.html.erb:9
+  Rendered favourites/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 21ms (Views: 17.6ms | ActiveRecord: 1.0ms)
+
+

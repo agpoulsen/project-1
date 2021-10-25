@@ -5,7 +5,42 @@ class FavouritesController < ApplicationController
   end
 
   def edit
-    @favourite = @current_user.favourites
+    @favourite = Favourite.find params[:id]
   end
 
+  def update
+    favourite = Favourite.find params[:id]
+    venue = Venue.find params[:favourite][:venue_ids]
+    favourite.venues << venue
+    redirect_to favourite_path(favourite)
+  end
+
+  def new
+    @favourite = @current_user.favourites.new
+  end
+
+  def create
+    favourite = @current_user.favourites.new user_params
+    favourite.save
+    redirect_to favourites_path
+  end
+
+  def show
+    @favourite = Favourite.find params[:id]
+  end
+
+  def destroy
+    favourite = Favourite.find params[:id]
+    favourite.destroy
+    redirect_to favourites_path
+  end
+
+  private
+  def user_params
+    params.require(:favourite).permit(:name)
+  end
+
+  def favourite_params
+    params.require(:favourite).permit(:venue_id)
+  end
 end
