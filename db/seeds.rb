@@ -43,3 +43,14 @@ u1.favourites << f1
 u2.favourites << f4
 u3.favourites << f2
 u4.favourites << f3
+
+Night.destroy_all
+n1 = Night.create :name => "Post Exam Celebrations"
+n2 = Night.create :name => "Ben resigned"
+n3 = Night.create :name => "Drinks because the pubs are open"
+puts "#{ Night.count } nights"
+
+n1.users << u1 << u2
+n2.users << u3 << u4
+n3.users << u1 << u2 << u3 << u4
+puts "Assign users to Nights"
