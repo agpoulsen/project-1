@@ -27,6 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 #ruby wrapper for google places API
 gem 'google_places'
 gem 'rails_12factor'
+gem 'jquery-rails'
+gem 'bootstrap', '4.4.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

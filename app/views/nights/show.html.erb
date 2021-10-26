@@ -1,0 +1,15 @@
+<h1><%= @night.name %></h1>
+
+<h2>Who's coming?</h2>
+  <% @night.users.each do |u| %>
+    <p><%= u.first_name %> <%= u.last_name %></p>
+  <% end %>
+
+<h2>Where are we going?</h2>
+  <% @users.each do |u| %>
+    <% u.favourites.each do |f| %>
+      <% f.venues.each do |v| %>
+        <p><%= v.name %></p>
+      <% end %>
+    <% end %>
+  <% end %>

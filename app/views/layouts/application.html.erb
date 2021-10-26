@@ -14,6 +14,7 @@
       <nav>
         <%= link_to "Home", root_path %>
         <% if @current_user.present? %>
+          <%= link_to "Night Out", nights_path %>
           <%= link_to "Venues", venues_path %>
           <%= link_to "Your Favourites", favourites_path %>
           <%= link_to "Log Out #{ @current_user.email }", login_path, :method => 'delete' %>

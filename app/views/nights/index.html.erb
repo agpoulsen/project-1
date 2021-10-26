@@ -1,0 +1,5 @@
+<h1>Your Night Outs</h1>
+
+<% @nights.each do |n| %>
+  <p><%= link_to n.name, night_path(n)%></p>
+<% end %>
