@@ -8,6 +8,7 @@ class NightsController < ApplicationController
   def show
     @night = Night.find params[:id]
     @users = @night.users
+    @venues = list_venues @users
   end
 
   def edit
@@ -48,5 +49,18 @@ class NightsController < ApplicationController
   private
   def night_params
     params.require(:night).permit(:name, :description, :date, :time)
+  end
+
+  def list_venues users
+    venues = []
+    users.each do |u|
+      u.favourites.each do |f|
+        f.venues.each do |v|
+          venues << v.name unless venues.include? v
+        end
+      end
+      return venues
+    end
+
   end
 end

@@ -14,6 +14,11 @@
     <% end %>
   <% end %>
 
+<h4>does this work</h4>
+  <% @venues.each do |v| %>
+    <p><%= link_to v, venue_path(v) %></p>
+  <% end %>
+
 
 <div class="controls">
   <%= link_to "Edit Your Night Out", edit_night_path(@night) %>
