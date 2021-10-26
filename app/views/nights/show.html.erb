@@ -13,3 +13,9 @@
       <% end %>
     <% end %>
   <% end %>
+
+
+<div class="controls">
+  <%= link_to "Edit Your Night Out", edit_night_path(@night) %>
+  <%= button_to "Delete Your Night Out", night_path, :method => 'delete', :data => {:confirm => 'Are you sure you want to delete your night out?'}  %>
+</div>

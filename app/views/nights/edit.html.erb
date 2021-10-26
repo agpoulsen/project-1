@@ -1,0 +1,13 @@
+<h1>Edit <%= @night.name %> </h1>
+
+<% @night.users.each do |user| %>
+  <p><%= user.first_name %> <%= user.last_name %> </p> <%= button_to "Uninvite from Night Out", remove_night_path(@night.id, user.id), :method => 'delete' %>
+<% end %>
+
+<%= form_for @night do |f| %>
+
+<%= f.label :user_id  %>
+<%= f.select :user_ids, User.pluck(:first_name, :id) %>
+<%= f.submit "Invite to #{@night.name}" %>
+
+<% end %>

@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
   delete '/favourites/:favourite_id/:venue_id' => 'favourites#remove', :as => 'remove_favourite'
 
+  delete '/nights/:night_id/:user_id' => 'nights#remove', :as => 'remove_night'
+
 
 end

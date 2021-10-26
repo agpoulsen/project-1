@@ -10,4 +10,43 @@ class NightsController < ApplicationController
     @users = @night.users
   end
 
+  def edit
+    @night = Night.find params[:id]
+  end
+
+  def new
+    @night = @current_user.nights.new
+  end
+
+  def create
+    night = @current_user.nights.new night_params
+    night.save
+    @current_user.nights << night
+    redirect_to night_path(night)
+  end
+
+  def update
+    night = Night.find params[:id]
+    user = User.find params[:night][:user_ids]
+    night.users << user
+    redirect_to night_path(night)
+  end
+
+  def destroy
+    night = Night.find params[:id]
+    night.destroy
+    redirect_to nights_path
+  end
+
+  def remove
+    night = Night.find params[:night_id]
+    user = User.find params[:user_id]
+    night.users.delete(user)
+    redirect_to night_path(night)
+  end
+
+  private
+  def night_params
+    params.require(:night).permit(:name, :description, :date, :time)
+  end
 end
