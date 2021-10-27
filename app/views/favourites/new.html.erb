@@ -1,8 +1,11 @@
 <h1>New Favourite</h1>
 
 <%= form_for @favourite do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.submit "New Favourites List" %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => 'form-control' %>
+  </div>
+
+  <%= f.submit "New Favourites List", :class => 'btn btn-dark' %>
 <% end %>

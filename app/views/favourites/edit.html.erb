@@ -1,12 +1,18 @@
 <h1>Edit <%= @favourite.name %> </h1>
 
 <% @favourite.venues.each do |venue| %>
-  <p><%= venue.name %></p> <%= button_to "Remove from Favourites", remove_favourite_path(@favourite.id, venue.id), :method => 'delete' %>
+  <p><%= venue.name %></p> <%= button_to "Remove from Favourites", remove_favourite_path(@favourite.id, venue.id), :method => 'delete', :class => "btn btn-dark" %>
 <% end %>
 
+<br>
+
 <%= form_for @favourite do |f| %>
-  <%= f.label :venue_id %>
-  <%= f.select :venue_ids, Venue.pluck(:name, :id) %>
-  <%= f.submit "Add to #{@favourite.name}" %>
+
+  <div class="form-group">
+    <%= f.label :venue_id %>
+    <%= f.select :venue_ids, Venue.pluck(:name, :id), :class => 'form-control' %>
+  </div>
+
+  <%= f.submit "Add to #{@favourite.name}", :class => "btn btn-dark" %>
 
 <% end %>

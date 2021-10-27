@@ -1,4 +1,4 @@
-class FavouritesController < ApplicationController
+  class FavouritesController < ApplicationController
   before_action :check_for_login
 
   def index

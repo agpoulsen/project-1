@@ -15,7 +15,9 @@ class VenuesController < ApplicationController
   end
 
   def create
-
+    venue = Venue.new venue_params
+    venue.save
+    redirect_to venue_path(venue)
   end
 
   def edit
@@ -25,6 +27,9 @@ class VenuesController < ApplicationController
   private
   def return_google_spot
     api_key = Rails.application.secrets.google_api_key
+  end
 
+  def venue_params
+    params.require(:venue).permit(:name, :location, :image, :type)
   end
 end

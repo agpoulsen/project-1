@@ -1,17 +1,26 @@
 <h1>New Night Out</h1>
 
 <%= form_for @night do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.label :date %>
-  <%= f.date_field :date %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => 'form-control' %>
+  </div>
 
-  <%= f.label :time %>
-  <%= f.time_field :time %>
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_field :date, :class => 'form-control' %>
+  </div>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <div class="form-group">
+    <%= f.label :time %>
+    <%= f.time_field :time, :class => 'form-control' %>
+  </div>
 
-  <%= f.submit "Time to Head Out!" %>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, :class => 'form-control' %>
+  </div>
+
+  <%= f.submit "Time to Head Out!", :class => "btn btn-dark" %>
 <% end %>
