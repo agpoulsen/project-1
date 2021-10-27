@@ -1,0 +1,11 @@
+<h1> <%= @venue.name %> </h1>
+
+<p><%= @venue.location %></p>
+
+<% if @venue.image.present? %>
+  <%= image_tag @venue.image, :class => "venue-image" %>
+<% end %>
+
+<div class="controls">
+  <%= link_to "Edit #{@venue.name}", edit_venue_path %>
+</div>

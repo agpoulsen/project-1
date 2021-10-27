@@ -1,23 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lexend&display=swap');
+
+
 body {
-  background-color: grey;
+  background-color: white;
+  font-family: 'Lexend', sans-serif;
 }
 
 .container {
   max-width: 960px;
   margin: 0 auto;
-  background-color: white;
+  background-color: orange;
   padding: 1em;
-  border-radius: 0.5em;
+  border-radius: 1em;
   text-align: center;
+}
+
+h1 {
+  padding: 0.5em;
 }
 
 nav {
   background-color: blue;
   text-align: right;
-  padding: 2em;
+  padding: 1em;
   margin: 0;
+  font-size: 125%;
+  font-weight: bold;
+  border-radius: 1em;
+  box-shadow: 5px 5px 5px black;
+}
+
+nav .navbar-brand {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 150%;
+}
+
+nav a {
+  padding: 1em;
+}
+
+nav a:hover {
+  color: orange;
+  text-shadow: 1px 1px 1px black;
 }
 
 nav a {
   color: white;
+}
+
+.controls {
+  display: inline-block;
+  width: 600px;
+}
+
+#home-image {
+  max-width: 600px;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.venue-image {
+  max-width: 600;
+  padding: 1.5em;
 }

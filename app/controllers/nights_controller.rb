@@ -56,11 +56,11 @@ class NightsController < ApplicationController
     users.each do |u|
       u.favourites.each do |f|
         f.venues.each do |v|
-          venues << v.name unless venues.include? v
+          venues << v unless venues.include? v
         end
       end
-      return venues
     end
-
+    return venues
   end
+  
 end

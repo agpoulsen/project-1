@@ -6,15 +6,16 @@ u4 = User.create :first_name => 'Alice', :last_name => 'Smith', :email => 'asmit
 puts "#{ User.count } users"
 
 Venue.destroy_all
-v1 = Venue.create :name => 'The Builders Arms', :location => 'Melbourne, Australia', :image => ''
-v2 = Venue.create :name => 'Bad Frankie', :location => 'Melbourne, Australia', :image => ''
-v3 = Venue.create :name => 'Above Board', :location => 'Melbourne, Australia', :image => ''
-v4 = Venue.create :name => 'Primo', :location => 'Melbourne, Australia', :image => ''
-v5 = Venue.create :name => 'The Catfish', :location => 'Melbourne, Australia ', :image => ''
-v6 = Venue.create :name => 'The Baxter Inn', :location => 'Sydney, Australia', :image => ''
-v7 = Venue.create :name => 'Continental Deli', :location => 'Sydney, Australia', :image => ''
-v8 = Venue.create :name => "Belle's Hot Chicken", :location => 'Melbourne, Australia', :image => ''
-v9 = Venue.create :name => 'Besk', :location => 'Perth, Australia', :image => ''
+v1 = Venue.create :name => 'The Builders Arms', :location => 'Melbourne, Australia', :image => 'https://res.cloudinary.com/dydsfpahp/image/upload/v1635311085/Project-1/builders_arms_x5jpaj.jpg'
+v2 = Venue.create :name => 'Bad Frankie', :location => 'Melbourne, Australia', :image => 'https://res.cloudinary.com/dydsfpahp/image/upload/v1635311081/Project-1/bad_frankie_sqtp3v.jpg'
+v3 = Venue.create :name => 'Above Board', :location => 'Melbourne, Australia', :image => 'https://res.cloudinary.com/dydsfpahp/image/upload/v1635311078/Project-1/above_board_yvjkap.jpg'
+v4 = Venue.create :name => 'Primo', :location => 'Melbourne, Australia', :image => 'https://lorempixel.com/660/500/nightlife/'
+v5 = Venue.create :name => 'The Catfish', :location => 'Melbourne, Australia ', :image => 'https://res.cloudinary.com/dydsfpahp/image/upload/v1635311079/Project-1/catfish_jt5uts.jpg'
+v6 = Venue.create :name => 'The Baxter Inn', :location => 'Sydney, Australia', :image => 'https://res.cloudinary.com/dydsfpahp/image/upload/v1635311078/Project-1/baxter_inn_fmt8jt.jpg'
+v7 = Venue.create :name => 'Continental Deli', :location => 'Sydney, Australia', :image => 'https://lorempixel.com/660/500/nightlife/'
+v8 = Venue.create :name => "Belle's Hot Chicken", :location => 'Melbourne, Australia', :image => 'https://res.cloudinary.com/dydsfpahp/image/upload/v1635311079/Project-1/belles_bn6ipa.jpg'
+v9 = Venue.create :name => 'Besk', :location => 'Perth, Australia', :image => 'https://res.cloudinary.com/dydsfpahp/image/upload/v1635311079/Project-1/besk_hkfqwj.jpg'
+v10 = Venue.create :name => 'NowhereMan Brewing Co', :location => 'Perth, Australia', :image => 'https://lorempixel.com/660/500/nightlife/'
 puts "#{ Venue.count } venues"
 
 Category.destroy_all
