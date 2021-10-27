@@ -7,7 +7,7 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find params[:id]
-
+    @venue_json_object = @venue.return_google_spot(@venue.name, @venue.location)
   end
 
   def new
@@ -25,9 +25,6 @@ class VenuesController < ApplicationController
   end
 
   private
-  def return_google_spot
-    api_key = Rails.application.secrets.google_api_key
-  end
 
   def venue_params
     params.require(:venue).permit(:name, :location, :image, :type)

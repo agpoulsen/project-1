@@ -2,6 +2,8 @@
 
 <p><%= @venue.location %></p>
 
+<p>Rating: <%= @venue_json_object['rating'] %>/5</p>
+
 <% if @venue.image.present? %>
   <%= image_tag @venue.image, :class => "venue-image" %>
 <% end %>
