@@ -51,6 +51,7 @@ class NightsController < ApplicationController
     params.require(:night).permit(:name, :description, :date, :time)
   end
 
+  # Iterates through each user's favourites and pushes the venue object to an array as long as that venue object isn't already in the array - prevents duplicate venues in the Night Out suggestions
   def list_venues users
     venues = []
     users.each do |u|
@@ -62,5 +63,5 @@ class NightsController < ApplicationController
     end
     return venues
   end
-  
+
 end

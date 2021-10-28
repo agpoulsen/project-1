@@ -1,8 +1,19 @@
 <h1><%= @current_user.first_name %>'s Favourites</h1>
 
+<p>You can arrange your favourite venues below by creating new favourite categories.</p>
 
-<% @favourites.each do |f| %>
-  <h2> <%= link_to f.name, favourite_path(f) %> </h2>
-<% end %>
-  
+<br>
+
+<div class="card-deck">
+  <% @favourites.each do |f| %>
+    <div class="card w-50" style='center'>
+      <div class="card-body">
+        <h5 class="card-title hvr-grow"><%= link_to f.name, favourite_path(f) %></h5>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
 <%= link_to "Create New Favourite List", new_favourite_path %>

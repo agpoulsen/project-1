@@ -1,12 +1,12 @@
 <h1> <%= @favourite.name %> </h1>
 
 <% @favourite.venues.each do |v| %>
+  <p><%= link_to v.name, venue_path(v) %></p>
+<% end %>
 
-    <p><%= v.name %></p>
+<br>
 
-  <% end %>
-
-  <div class="controls">
-    <%= link_to "Edit", edit_favourite_path(@favourite) %>
-    <%= button_to "Delete Favourite", favourite_path, :method => 'delete', :data => { :confirm => 'Are you sure?'}, :class => "btn btn-dark" %>
-  </div>
+<div class="controls">
+  <%= link_to "Edit", edit_favourite_path(@favourite) %>
+  <%= button_to "Delete Favourite", favourite_path, :method => 'delete', :data => { :confirm => 'Are you sure?'}, :class => "btn btn-dark" %>
+</div>

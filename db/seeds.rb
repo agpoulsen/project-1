@@ -27,14 +27,14 @@ c5 = Category.create :name => 'Dive Bar'
 puts "#{ Category.count } categories"
 
 Favourite.destroy_all
-f1 = Favourite.create :name => 'Lex Night Out'
+f1 = Favourite.create :name => 'Night Out in Fitzroy'
 f2 = Favourite.create :name => 'Quiet Wines'
 f3 = Favourite.create :name => 'Celebrate!'
 f4 = Favourite.create :name => 'Cocktails'
 puts "#{ Favourite.count } favourites"
 
 puts "Assign venues to favourites"
-f1.venues << v1 << v2 << v3
+f1.venues << v1 << v2 << v3 << v5
 f2.venues << v1 << v8
 f3.venues << v8 << v3 << v4
 f4.venues << v2 << v3 << v6 << v9
@@ -47,11 +47,11 @@ u4.favourites << f3
 
 Night.destroy_all
 n1 = Night.create :name => "Post Exam Celebrations"
-n2 = Night.create :name => "Ben resigned"
-n3 = Night.create :name => "Drinks because the pubs are open"
+n2 = Night.create :name => "Lockdown is over!"
+n3 = Night.create :name => "Joel's Birthday"
 puts "#{ Night.count } nights"
 
-n1.users << u1 << u2
+n1.users << u1
 n2.users << u3 << u4
 n3.users << u1 << u2 << u3 << u4
 puts "Assign users to Nights"

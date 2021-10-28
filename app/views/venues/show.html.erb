@@ -2,13 +2,15 @@
 
 <p><%= @venue.location %></p>
 
+<%#  Shows the whether the venue is currently open or closed by querying Google Places database. %>
 <% if @venue_json_object['opening_hours']['open_now'] %>
-  <p> <%= @venue.name %> is currently open. </p>
+  <p> <%= @venue.name %> is currently <span class='open'>open</span>. </p>
 <% else %>
-  <p> <%= @venue.name %> is closed.</p>
+  <p> <%= @venue.name %> is <span class='closed'>closed</span>.</p>
 <% end %>
 
-<p>Rating: <%= @venue_json_object['rating'] %>/5</p>
+<%# # Shows the Google Places rating for the venue %>
+<p>Google Rating: <%= @venue_json_object['rating'] %>/5</p>
 
 <% if @venue.image.present? %>
   <%= image_tag @venue.image, :class => "venue-image" %>

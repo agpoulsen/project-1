@@ -1,4 +1,4 @@
-# Dinnr - A Web App for SEIR-48 Project 1
+# Dinnr - A Night Out Management Tool.
 > General Assembly SEIR-48 Project 1
 
 > Live demo [_here_](https://seir48project1.herokuapp.com/).

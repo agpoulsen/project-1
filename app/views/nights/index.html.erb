@@ -1,7 +1,21 @@
 <h1>Your Night Outs</h1>
 
-<% @nights.each do |n| %>
-  <p><%= link_to n.name, night_path(n)%></p>
-<% end %>
+Create a new Night Out below. Invite some friends and see the venue options!
+
+<br>
+<br>
+
+<div class="card-deck">
+  <% @nights.each do |n| %>
+    <div class="card w-50" style='center'>
+      <div class="card-body">
+        <h5 class="card-title hvr-grow"><%= link_to n.name, night_path(n) %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"> <%= n.description %></h6>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
 
 <%= link_to "New Night Out", new_night_path, :class => 'controls' %>
