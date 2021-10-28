@@ -7,7 +7,6 @@
 <br>
 
 <%= form_for @favourite do |f| %>
-
   <div class="form-group">
     <%= f.label :venue_id %>
     <%= f.select :venue_ids, Venue.pluck(:name, :id), :class => 'form-control' %>

@@ -7,7 +7,6 @@
 <br>
 
 <%= form_for @night do |f| %>
-
 <div class="form-group">
   <%= f.label :user_id  %>
   <%= f.select :user_ids, User.pluck(:first_name, :id) %>

@@ -39,6 +39,7 @@ class NightsController < ApplicationController
     redirect_to nights_path
   end
 
+  #Removes a user from a Night Out
   def remove
     night = Night.find params[:night_id]
     user = User.find params[:user_id]

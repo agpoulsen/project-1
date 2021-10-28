@@ -36,6 +36,7 @@
     redirect_to favourites_path
   end
 
+  #Removes a venue from a user's favourites list
   def remove
     favourite = Favourite.find params[:favourite_id]
     venue = Venue.find params[:venue_id]
