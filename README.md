@@ -51,7 +51,7 @@ Project is: In Progress
 Room for improvement:
 - Front end Design still needs more work
 - Greater integration with Google Places for the venue database. i.e. Pull pictures and information from Google Places to use in the web app.
-- Personally, I need to spend more time planning out my projects before getting started.
+- Personally, I need to spend more time planning out my projects before getting started on coding.
 
 To do:
 - Implement a match feature in Night Outs where if two or users on a night out select a venue, the venue is highlighted and added to a sublist.
