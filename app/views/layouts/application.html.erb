@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
   </head>
 
   <body>
@@ -17,8 +17,8 @@
         <% if @current_user.present? %>
           <ul class="nav navbar-nav">
             <li><%= link_to "Night Out", nights_path %></li>
-            <li><%= link_to "Venues", venues_path %></li>
             <li><%= link_to "Your Favourites", favourites_path %></li>
+            <li><%= link_to "Venues", venues_path %></li>
             <li><%= link_to "Log Out #{ @current_user.email }", login_path, :method => 'delete' %></li>
         </ul>
         <% else %>
@@ -34,3 +34,10 @@
     </div>
   </body>
 </html>
+<!--
+|  _  \_   _| \ | || \ | || ___ \
+| | | | | | |  \| ||  \| || |_/ /
+| | | | | | | . ` || . ` ||    /
+| |/ / _| |_| |\  || |\  || |\ \
+|___/  \___/\_| \_/\_| \_/\_| \_|
+                                  -->

@@ -2,12 +2,14 @@
 
 <p><%= @venue.location %></p>
 
+<% if @venue_json_object['opening_hours']['open_now'] %>
+  <p> <%= @venue.name %> is currently open. </p>
+<% else %>
+  <p> <%= @venue.name %> is closed.</p>
+<% end %>
+
 <p>Rating: <%= @venue_json_object['rating'] %>/5</p>
 
 <% if @venue.image.present? %>
   <%= image_tag @venue.image, :class => "venue-image" %>
 <% end %>
-
-<div class="controls">
-  <%= link_to "Edit #{@venue.name}", edit_venue_path %>
-</div>
